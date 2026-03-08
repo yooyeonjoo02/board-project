@@ -1,0 +1,144 @@
+.photo-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.photo-detail__topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.photo-detail__nav-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.photo-detail__nav-button {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.photo-detail__nav-button:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.photo-detail__title {
+  margin: 0 0 8px;
+}
+
+.photo-detail__date {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.photo-detail__image-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.photo-detail__image-button {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.photo-detail__image {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.photo-detail__content {
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.photo-detail__status {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.photo-detail__status--error {
+  color: crimson;
+}
+
+.photo-detail__lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+}
+
+.photo-detail__lightbox-inner {
+  width: min(1100px, 100%);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.photo-detail__lightbox-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.photo-detail__lightbox-count {
+  color: white;
+  font-size: 14px;
+}
+
+.photo-detail__lightbox-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.photo-detail__lightbox-button {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.photo-detail__lightbox-image-wrap {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-detail__lightbox-image {
+  width: 100%;
+  height: auto;
+  max-height: 82vh;
+  object-fit: contain;
+  display: block;
+}
+
+.photo-detail__lightbox-tip {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+}

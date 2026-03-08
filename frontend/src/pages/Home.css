@@ -1,0 +1,200 @@
+/* ✅ 풀폭 배너 */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 700px; /* 배너 높이 */
+  overflow: hidden;
+
+  /* Layout(.pageContainer) padding 영향 안 받게 */
+  left: 50%;
+  margin-left: -50vw;
+  /* margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw); */
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 어두운 오버레이 + 텍스트 */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.heroTitle {
+  font-size: 44px;
+  margin: 0 0 10px;
+}
+
+.heroDesc {
+  font-size: 18px;
+  margin: 0 0 18px;
+  opacity: 0.95;
+}
+
+.heroBtns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.heroBtn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: white;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.heroBtn.ghost {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* ✅ 아래 섹션(컨테이너 안) */
+.homeSection {
+  margin-top: 26px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 22px;
+}
+
+.sectionMore {
+  color: #555;
+  text-decoration: none;
+}
+
+/* ✅ 4개씩 그리드 */
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* 카드 */
+.card {
+  border: 1px solid #eee;
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+  text-decoration: none;
+  color: #222;
+  display: block;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.thumbWrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+
+.thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.card:hover .thumb {
+  transform: scale(1.03);
+}
+
+.cardBody {
+  padding: 12px 12px 14px;
+}
+
+.cardTitle {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.cardMeta {
+  font-size: 13px;
+  color: #777;
+}
+
+/* 반응형 */
+@media (max-width: 1000px) {
+  .grid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .heroTitle {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid4 {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    height: 320px;
+  }
+}
+
+.homePager {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagerBtn,
+.pagerNum {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-size: 16px;
+  color: #555;
+}
+
+.pagerBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.pagerNum.active {
+  background: #111;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}

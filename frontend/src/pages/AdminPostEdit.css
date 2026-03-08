@@ -1,0 +1,99 @@
+.admin-post-edit {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.admin-post-edit__title {
+  margin-bottom: 24px;
+}
+
+.admin-post-edit__form {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-post-edit__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-post-edit__input,
+.admin-post-edit__textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+.admin-post-edit__file {
+  display: block;
+  margin-top: 8px;
+}
+
+.admin-post-edit__helper {
+  margin-top: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.admin-post-edit__image-section {
+  margin-top: 16px;
+}
+
+.admin-post-edit__section-title {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.admin-post-edit__image-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.admin-post-edit__image-card {
+  position: relative;
+  width: 220px;
+}
+
+.admin-post-edit__image {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: block;
+}
+
+.admin-post-edit__remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.admin-post-edit__submit-btn {
+  padding: 12px;
+  border: none;
+  background: #222;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.admin-post-edit__submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.admin-post-edit__message {
+  margin-top: 20px;
+  font-weight: bold;
+}

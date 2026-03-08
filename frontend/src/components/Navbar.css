@@ -1,0 +1,129 @@
+.siteHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-bottom: 1px solid #eee;
+  z-index: 50;
+
+  /* ✅ 크기 변화 부드럽게 */
+  transition: box-shadow 0.2s ease;
+}
+
+/* ✅ 기본(스크롤 전): 헤더 크게 */
+.headerInner {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  padding: 35px 16px; /* ✅ 크게 */
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  transition: padding 0.25s ease;
+}
+
+/* ✅ 기본 로고 크기 */
+.logoImg {
+  height: 64px; /* ✅ 크게 */
+  width: auto;
+  display: block;
+  transition: height 0.25s ease;
+}
+
+/* ✅ 스크롤 후(shrink) 상태 */
+.siteHeader.shrink {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.siteHeader.shrink .headerInner {
+  padding: 10px 16px; /* ✅ 작게 */
+}
+
+.siteHeader.shrink .logoImg {
+  height: 36px; /* ✅ 작게 */
+}
+
+/* 가운데 메뉴 */
+.mainNav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.navItem {
+  text-decoration: none;
+  color: #222;
+  padding: 10px 8px;
+  border-radius: 10px;
+}
+
+.navItem:hover {
+  background: #f5f5f5;
+}
+
+.navItem.active {
+  font-weight: 700;
+}
+
+/* 오른쪽 유틸 */
+.utilNav {
+  display: flex;
+  gap: 16px;
+}
+
+.utilItem {
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+}
+
+/* ✅ 드롭다운 */
+.dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(8px);
+  min-width: 160px;
+
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 6px 0;
+
+  display: none;
+  z-index: 9999;
+}
+
+.dropdown:hover .dropdownMenu {
+  display: block;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 10px 14px;
+  color: #222;
+  white-space: nowrap;
+}
+
+.dropdownItem:hover {
+  background: #f5f5f5;
+}
+
+.dropdownMenu::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
