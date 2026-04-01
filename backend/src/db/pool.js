@@ -9,6 +9,9 @@ if (!env.DATABASE_URL) {
 
 export const pool = new Pool({
   connectionString: env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 // ✅ 여기부터 임시 체크 (원인 잡고 나면 지워도 됨)
