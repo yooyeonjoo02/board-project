@@ -1,94 +1,3 @@
-// import { useMemo, useState } from "react";
-// import { Link } from "react-router-dom";
-// import Pagination from "../components/Pagination.jsx";
-// import { noticePosts } from "../data/noticePosts.js";
-
-// export default function NoticeBoard() {
-//   const PER_PAGE = 15;
-//   const [page, setPage] = useState(1);
-
-//   const totalPages = Math.ceil(noticePosts.length / PER_PAGE);
-
-//   const pageItems = useMemo(() => {
-//     const start = (page - 1) * PER_PAGE;
-//     return noticePosts.slice(start, start + PER_PAGE);
-//   }, [page]);
-
-//   return (
-//     <div>
-//       <h1 style={{ fontSize: 40, margin: "0 0 16px" }}>공지사항</h1>
-
-//       <div
-//         style={{
-//           border: "1px solid #eee",
-//           borderRadius: 14,
-//           overflow: "hidden",
-//           background: "white",
-//           boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
-//         }}
-//       >
-//         <table style={{ width: "100%", borderCollapse: "collapse" }}>
-//           <thead>
-//             <tr style={{ background: "#fafafa" }}>
-//               <th style={thStyle({ width: 90 })}>번호</th>
-//               <th style={thStyle({ textAlign: "left" })}>제목</th>
-//               <th style={thStyle({ width: 140 })}>작성일</th>
-//             </tr>
-//           </thead>
-
-//           <tbody>
-//             {pageItems.map((post) => (
-//               <tr key={post.id} style={rowStyle}>
-//                 <td style={tdStyle({ textAlign: "center", color: "#666" })}>
-//                   {post.id}
-//                 </td>
-
-//                 <td style={tdStyle({ textAlign: "left" })}>
-//                   <Link
-//                     to={`/notices/${post.id}`}
-//                     style={{
-//                       color: "#111",
-//                       textDecoration: "none",
-//                       fontWeight: 600,
-//                     }}
-//                   >
-//                     {post.title}
-//                   </Link>
-//                 </td>
-
-//                 <td style={tdStyle({ textAlign: "center", color: "#666" })}>
-//                   {post.createdAt}
-//                 </td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </div>
-
-//       <Pagination page={page} totalPages={totalPages} onChange={setPage} />
-//     </div>
-//   );
-// }
-
-// const thStyle = (extra = {}) => ({
-//   padding: "14px 12px",
-//   fontSize: 14,
-//   fontWeight: 700,
-//   borderBottom: "1px solid #eee",
-//   ...extra,
-// });
-
-// const tdStyle = (extra = {}) => ({
-//   padding: "14px 12px",
-//   fontSize: 14,
-//   borderBottom: "1px solid #f0f0f0",
-//   ...extra,
-// });
-
-// const rowStyle = {
-//   cursor: "pointer",
-// };
-
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination.jsx";
@@ -107,7 +16,7 @@ export default function NoticeBoard() {
   const [error, setError] = useState("");
 
   // 필요하면 .env로 빼도 됨
-  const BASE_URL = "http://localhost:4000";
+  const BASE_URL = "https://board-project-fap6.onrender.com";
 
   // ✅ 전체 페이지 수
   const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));

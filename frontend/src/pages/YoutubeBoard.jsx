@@ -1,51 +1,8 @@
-// import { useMemo, useState } from "react";
-// import PostCard from "../components/PostCard.jsx";
-// import Pagination from "../components/Pagination.jsx";
-// import youtubePosts from "../data/youtubePosts.js";
-
-// export default function YoutubeBoard() {
-//   const PER_PAGE = 12; // 3x4
-//   const [page, setPage] = useState(1);
-
-//   const totalPages = Math.ceil(youtubePosts.length / PER_PAGE);
-
-//   const pageItems = useMemo(() => {
-//     const start = (page - 1) * PER_PAGE;
-//     return youtubePosts.slice(start, start + PER_PAGE);
-//   }, [page]);
-
-//   return (
-//     <div>
-//       <h1 style={{ fontSize: 40, margin: "0 0 16px" }}>활동(유튜브)</h1>
-
-//       <div
-//         style={{
-//           display: "grid",
-//           gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-//           gap: 16,
-//         }}
-//       >
-//         {pageItems.map((post) => (
-//           <PostCard
-//             key={post.id}
-//             to={`/activities/youtube/${post.id}`}
-//             thumbnail={`https://img.youtube.com/vi/${post.youtubeId}/hqdefault.jpg`}
-//             title={post.title}
-//             createdAt={post.createdAt}
-//           />
-//         ))}
-//       </div>
-
-//       <Pagination page={page} totalPages={totalPages} onChange={setPage} />
-//     </div>
-//   );
-// }
-
 import { useEffect, useMemo, useState } from "react";
 import PostCard from "../components/PostCard.jsx";
 import Pagination from "../components/Pagination.jsx";
 
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = "https://board-project-fap6.onrender.com";
 const PER_PAGE = 12; // 3x4
 
 export default function YoutubeBoard() {

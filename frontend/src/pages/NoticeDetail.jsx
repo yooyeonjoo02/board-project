@@ -1,94 +1,3 @@
-// import { useNavigate, useParams, Link } from "react-router-dom";
-// import { noticePosts } from "../data/noticePosts.js";
-
-// export default function NoticeDetail() {
-//   const { id } = useParams();
-//   const navigate = useNavigate();
-
-//   const postId = Number(id);
-
-//   const post = noticePosts.find((p) => p.id === postId);
-//   const prevPost = noticePosts.find((p) => p.id === postId - 1);
-//   const nextPost = noticePosts.find((p) => p.id === postId + 1);
-
-//   if (!post) return <div>게시글을 찾을 수 없습니다.</div>;
-
-//   return (
-//     <div style={{ maxWidth: 900 }}>
-
-//       {/* 목록 버튼 */}
-//       <button
-//         onClick={() => navigate(-1)}
-//         style={{
-//           marginBottom: 16,
-//           padding: "8px 12px",
-//           borderRadius: 10,
-//           border: "1px solid #ddd",
-//           background: "white",
-//           cursor: "pointer",
-//         }}
-//       >
-//         ← 목록으로
-//       </button>
-
-//       <h1 style={{ margin: "0 0 8px" }}>{post.title}</h1>
-
-//       <div style={{ color: "#666", marginBottom: 20 }}>
-//         {post.createdAt}
-//       </div>
-
-//       {/* 이미지 */}
-//       {post.images?.map((img, i) => (
-//         <img
-//           key={i}
-//           src={img}
-//           alt=""
-//           style={{
-//             width: "100%",
-//             marginBottom: 20,
-//             borderRadius: 10,
-//           }}
-//         />
-//       ))}
-
-//       <p style={{ lineHeight: 1.7 }}>{post.content}</p>
-
-//       {/* 이전글 / 다음글 */}
-//       <div
-//         style={{
-//           marginTop: 40,
-//           borderTop: "1px solid #eee",
-//           paddingTop: 20,
-//         }}
-//       >
-//         {prevPost && (
-//           <div style={{ marginBottom: 8 }}>
-//             이전글 :
-//             <Link
-//               to={`/notices/${prevPost.id}`}
-//               style={{ marginLeft: 8 }}
-//             >
-//               {prevPost.title}
-//             </Link>
-//           </div>
-//         )}
-
-//         {nextPost && (
-//           <div>
-//             다음글 :
-//             <Link
-//               to={`/notices/${nextPost.id}`}
-//               style={{ marginLeft: 8 }}
-//             >
-//               {nextPost.title}
-//             </Link>
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
-
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
@@ -98,7 +7,7 @@ export default function NoticeDetail() {
 
   const postId = Number(id);
 
-  const BASE_URL = "http://localhost:4000";
+  const BASE_URL = "https://board-project-fap6.onrender.com";
 
   const [post, setPost] = useState(null);
   const [list, setList] = useState([]); // prev/next 계산용

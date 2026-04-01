@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = "https://board-project-fap6.onrender.com";
 
 export async function fetchPosts(type = "PHOTO", page = 1, size = 12) {
   const qs = new URLSearchParams({ type, page, size });

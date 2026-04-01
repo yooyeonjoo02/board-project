@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./PhotoDetail.css";
 
-const API_BASE = "http://localhost:4000";
+const API_BASE = "https://board-project-fap6.onrender.com";
 
 export default function PhotoDetail() {
   const { id } = useParams();
